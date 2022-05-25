@@ -30,15 +30,15 @@ module.exports = {
         global.namabot = conn.user.name
         global.packname = global.namabot
         global.author = global.data.owner
-        //global.author = '𝑨𝒈𝒖𝒛 𝑭𝒂𝒎𝒊𝒍𝒊𝒂'
+        //global.author = '𝐘𝐮𝐬𝐫𝐢𝐥'
         global.wm2 = global.data.namabot + ' ' + global.data.owner
-        global.wm = namabot + ' ву ƒσкυѕ ι∂'
+        global.wm = namabot + ' ву yusril'
         global.colong1 = 'Ciss 📸'
         global.colong2 = 'ʙy ᴀɢᴜᴢ ꜰᴀᴍɪʟɪᴀ'
         global.kontak2 = [
-        ['6281320170984', '𝘼𝙜𝙪𝙯 𝙁𝙖𝙢𝙞𝙡𝙞𝙖', 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'FokusDotId13@gmail.com', true],
-        ['6283823916413', await this.getName('6283823916413@s.whatsapp.net'), 'ᴄꜱ ꜰᴀᴍɪʟy-ʙᴏᴛ', 'sa0066588@gmail.com', true],
-        ['6285157436653', '𝙴𝙽𝙹𝙴𝙻𝙰-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
+        ['6289520415063', '𝘼𝙜𝙪𝙯 𝙁𝙖𝙢𝙞𝙡𝙞𝙖', 'ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ', 'defrijudika@gmail.com', true],
+        ['6282252875751', await this.getName('6283823916413@s.whatsapp.net'), 'ᴄꜱ ꜰᴀᴍɪʟy-ʙᴏᴛ', 'sa0066588@gmail.com', true],
+        ['6285157436653', '𝐅𝐚𝐦𝐢𝐥𝐲-𝙱𝙾𝚃', 'Bot WhatsApp', 'Nothing!', true],
         ['6288276639962', await this.getName('6288276639962@s.whatsapp.net'), 'ᴄꜱ ꜰᴀᴍɪʟy-ʙᴏᴛ', 'khasanahmarifatul28@gmail.com', true],
         ['6285669524800', await this.getName('6285669524800@s.whatsapp.net'), 'ᴄꜱ ꜰᴀᴍɪʟy-ʙᴏᴛ', 'rykkalieeofficiall@gmail.com', true],
         ]
@@ -51,8 +51,8 @@ module.exports = {
             m = simple.smsg(this, m) || m
             if (!m) return
             // console.log(m)
-            m.exp = 0
-            m.limit = false
+            m.exp = 5
+            m.limit = 30
             try {
                 let user = global.db.data.users[m.sender]
                 if (typeof user !== 'object') global.db.data.users[m.sender] = {}
@@ -132,10 +132,10 @@ module.exports = {
                     if (!isNumber(user.age)) user.age = -1
                     if (!isNumber(user.regTime)) user.regTime = -1
                     }
-                    if (!('premium' in user)) user.premium = false
+                    if (!('premium' in user)) user.premium = true
                     if (!isNumber(user.premiumTime)) user.premiumTime = 0
                     if (!user.role) user.role = ''
-                    if (!('autolevelup' in user)) user.autolevelup = false
+                    if (!('autolevelup' in user)) user.autolevelup = true
                     if (!isNumber(user.pc)) user.pc = 0
                     //mancing
                     if (!isNumber(user.as)) user.as = 0
@@ -156,13 +156,13 @@ module.exports = {
                     if (!('job' in user)) user.job = 'Pengangguran'
                     if (!isNumber(user.lastjob)) user.lastjob = 0
                     if (!isNumber(user.lastkerja)) user.lastkerja = 0
-                    if (!('ojek' in user)) user.ojek = false
-                    if (!('pedagang' in user)) user.pedagang = false
-                    if (!('dokter' in user)) user.dokter = false
-                    if (!('petani' in user)) user.petani = false
-                    if (!('montir' in user)) user.montir = false
-                    if (!('kuli' in user)) user.kuli = false
-                    if (!('polisi' in user)) user.polisi = false
+                    if (!('ojek' in user)) user.ojek = true
+                    if (!('pedagang' in user)) user.pedagang = true
+                    if (!('dokter' in user)) user.dokter = true
+                    if (!('petani' in user)) user.petani = true
+                    if (!('montir' in user)) user.montir = true
+                    if (!('kuli' in user)) user.kuli = true
+                    if (!('polisi' in user)) user.polisi = true
                 } else global.db.data.users[m.sender] = {
                     joincount: 1,
                     healt: 100,
@@ -259,13 +259,13 @@ module.exports = {
                     job: 'Pengangguran',
                     lastjob: 0,
                     lastkerja: 0,
-                    ojek: false,
-                    pedagang: false,
-                    dokter: false,
-                    petani: false,
-                    montir: false,
-                    kuli: false,
-                    polisi: false,
+                    ojek: true,
+                    pedagang: true,
+                    dokter: true,
+                    petani: true,
+                    montir: true,
+                    kuli: true,
+                    polisi: true,
                 }
                 let chat = global.db.data.chats[m.chat]
                 if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
@@ -288,11 +288,11 @@ module.exports = {
                     if (!isNumber(chat.expired)) chat.expired = 0
                     if (!('antiBadword' in chat)) chat.antiBadword = true
                     if (!('antispam' in chat)) chat.antispam = true
-                    if (!('antitroli' in chat)) chat.antitroli = false
-                    if (!('antivirtex' in chat)) chat.antivirtex = false
+                    if (!('antitroli' in chat)) chat.antitroli = true
+                    if (!('antivirtex' in chat)) chat.antivirtex = true
                     if (!('viewonce' in chat)) chat.viewonce = true
-                    if (!('nsfw' in chat)) chat.nsfw = false
-                    if (!('simi' in chat)) chat.simi = false
+                    if (!('nsfw' in chat)) chat.nsfw = true
+                    if (!('simi' in chat)) chat.simi = true
                     if (!('clear' in chat)) chat.clear = false
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0 
                 } else global.db.data.chats[m.chat] = {
@@ -314,11 +314,11 @@ module.exports = {
                     expired: 0,
                     antiBadword: true,
                     antispam: true,
-                    antitroli: false,
-                    antivirtex: false,
+                    antitroli: true,
+                    antivirtex: true,
                     viewonce: true,
-                    nsfw: false,
-                    simi: false,
+                    nsfw: true,
+                    simi: true,
                     clear: false,
                     clearTime: 0
                 }
