@@ -11,9 +11,9 @@
     },
     "scripts": {
         "start": "node index.js",
-        "mongo": "node . --db 'isi mongodb mu'",
+        "mongo": "node . --db 'mongodb+srv://isacomel:isha@cluster0.z2amh.mongodb.net/database?retryWrites=true&w=majority'",
         "test": "node test.js",
-        "test2": "nodemon index.js --server --autocleartmp"
+        "test2": "nodemon index.js --server"
     },
     "keywords": [
         "termux-whatsapp-bot",
@@ -29,16 +29,16 @@
         "stikerin",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/fokusdotid/family-md",
+    "homepage": "https://github.com/yusrilrnld/family-md",
     "author": {
-        "name": "Fokus ID"
+        "name": "Yusril"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/fokusdotid/family-md.git"
+        "url": "git+https://github.com/yusrilrnld/family-md.git"
     },
     "bugs": {
-        "url": "https://github.com/fokusdotid/family-md/issues"
+        "url": "https://github.com/yusrilrnld/family-md/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
